@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Utils/Common.hpp"
+#include "Modules/FEZEngine.hpp"
 
 // getters and setters for standard properties
 #define FEZOBJ_PROPERTY_GETTER(type, name, offset) type Get##name##() { type* val = (type*)(((char*)thisPtr) + offset); return *val; }
@@ -21,31 +22,33 @@
     FEZOBJ_OBJECT_SETTER(type, name, offset)
 
 
-// wrappers for functions from game object's VTables
-#define FEZOBJ_VTABLE_FUNC_0(offset, returnType, name) \
+// wrappers for functions from game
+#define FEZOBJ_FUNC_0(offset, returnType, name) \
     returnType name##() { \
-        (returnType(__thiscall*)(void*))(*((*(void***)thisPtr) + offset))(thisPtr); \
+        ((returnType(__stdcall*)(void*))(FEZEngine::GetFuncAddr(offset)))(thisPtr); \
     }
-#define FEZOBJ_VTABLE_FUNC_1(offset, returnType, name, param1) \
-    returnType name##(param1 a) { \
-        ((returnType(__thiscall*)(void*, param1))(*((*(void***)thisPtr) + offset)))(thisPtr, a); \
+#define FEZOBJ_FUNC_1(offset, returnType, name, t1) \
+    returnType name##(t1 v1) { \
+        ((returnType(__stdcall*)(void*, t1))(FEZEngine::GetFuncAddr(offset)))(thisPtr, v1); \
     }
-#define FEZOBJ_VTABLE_FUNC_2(offset, returnType, name, param1, param2) \
-    returnType name##(param1 a, param2 b) { \
-        ((returnType(__thiscall*)(void*, param1, param2))(*((*(void***)thisPtr) + offset)))(thisPtr, a, b); \
+#define FEZOBJ_FUNC_2(offset, returnType, name, t1, t2) \
+    returnType name##(t1 v1, t2 v2) { \
+        ((returnType(__stdcall*)(void*, param1, param2))(FEZEngine::GetFuncAddr(offset)))(thisPtr, v1, v2); \
     }
-#define FEZOBJ_VTABLE_FUNC_3(offset, returnType, name, param1, param2, param3) \
-    returnType name##(param1 a, param2 b, param3 c) { \
-        ((returnType(__thiscall*)(void*, param1, param2, param3))(*((*(void***)thisPtr) + offset)))(thisPtr, a, b, c); \
+#define FEZOBJ_FUNC_3(offset, returnType, name, param1, param2, param3) \
+    returnType name##(t1 v1, t2 v2, t3 v3) { \
+        ((returnType(__stdcall*)(void*, t1, t2, t3))(FEZEngine::GetFuncAddr(offset)))(thisPtr, v1, v2, v3); \
     }
 
 namespace FEZEngine {
+    // definition is in FEZEngine.cpp. Have to have it here, otherwise compiler goes mad
+    uintptr_t GetFuncAddr(int offset);
 
     class Object {
     protected:
         void* thisPtr;
     public:
-        FEZOBJ_PROPERTY_GETTER(int, VTable, 0x00)
+        FEZOBJ_PROPERTY_GETTER(int, IdentifierOrSth, 0x00)
     public:
         void* ThisPtr() { return thisPtr; }
         bool IsValid() { return this != nullptr && thisPtr != nullptr && thisPtr != (void*)0xFFFFFFFF; }

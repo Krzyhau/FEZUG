@@ -12,6 +12,8 @@ namespace FEZEngine {
 
         FEZOBJ_OBJECT_GETTER(LevelData, Level, 0x38)
         FEZOBJ_OBJECT_GETTER(PlayerManager, PlayerManager, 0x88)
+
+        FEZOBJ_FUNC_0(0xDD14, void, Reset)
     };
 
 }

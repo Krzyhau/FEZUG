@@ -13,7 +13,10 @@ namespace FEZEngine {
     FEZOBJ_STATIC_DECL(LevelManager);
     FEZOBJ_STATIC_DECL(PlayerManager);
     FEZOBJ_STATIC_DECL(InputManager);
+    FEZOBJ_STATIC_DECL(CameraManager);
     void Init();
     void UpdateStaticObjects();
     void Update();
+
+    uintptr_t GetFuncAddr(int offset);
 }

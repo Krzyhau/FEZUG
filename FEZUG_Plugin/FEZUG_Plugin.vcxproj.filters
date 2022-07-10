@@ -118,5 +118,8 @@
     <ClInclude Include="Features\Noclip.hpp">
       <Filter>Features</Filter>
     </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\CameraManager.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

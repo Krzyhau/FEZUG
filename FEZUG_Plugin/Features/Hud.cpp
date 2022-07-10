@@ -17,13 +17,13 @@ void Hud::Draw() {
 
     Vector3 velocity = FEZEngine::GetPlayerManager()->GetVelocity();
     // goddamn velocity is getting crazy when on ground. Just round it to 0.
-    if (fabsf(velocity.y) < 0.001) velocity.y = 0;
+    if (fabsf(velocity.y) < 0.0001) velocity.y = 0;
     gOverlay->DrawFontText(0, 6, wSize.y - 95, Overlay::Color(255, 255, 255, 255), "Gomez vel: %.04f %.04f %.04f", velocity.x, velocity.y, velocity.z);
 
     string gomezState = FEZEngine::ActionTypeToString(FEZEngine::GetPlayerManager()->GetAction(), true);
     gOverlay->DrawFontText(0, 6, wSize.y - 60, Overlay::Color(255, 255, 255, 255), "Gomez state: %s", gomezState.c_str());
 
-    void* forcedTreasurePtr = FEZEngine::GetPlayerManager()->GetForcedTreasure()->ThisPtr();
-    gOverlay->DrawFontText(0, 6, wSize.y - 25, Overlay::Color(255, 255, 255, 255), "Forced Treasure: %08X", forcedTreasurePtr);
+    Vector3 cam = FEZEngine::GetCameraManager()->GetSideVector();
+    gOverlay->DrawFontText(0, 6, wSize.y - 25, Overlay::Color(255, 255, 255, 255), "Cam side vec: %.03f %.03f %.03f", cam.x, cam.y, cam.z);
 }
 

@@ -5,6 +5,8 @@
 #include "Features/Feature.hpp"
 
 class Noclip : public Feature {
+private:
+    Vector3 oldPos;
 public:
     bool enabled = false;
     float speed = 0.1f;

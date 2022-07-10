@@ -11,6 +11,7 @@ namespace FEZEngine {
     FEZOBJ_STATIC_REDECL(LevelManager);
     FEZOBJ_STATIC_REDECL(PlayerManager);
     FEZOBJ_STATIC_REDECL(InputManager);
+    FEZOBJ_STATIC_REDECL(CameraManager);
 
     void Init() {
         FEZOBJ_STATIC_CREATE(Game, (Memory::ScanInMemoryPages("01 01 00 00 00 40 0D 03") - 0x53));
@@ -19,7 +20,7 @@ namespace FEZEngine {
         UpdateStaticObjects();
         Logger::Log("FEZUG", "LevelManager pointer: %08X", GetGame()->GetLevelManager()->ThisPtr());
         Logger::Log("FEZUG", "PlayerManager pointer: %08X", GetGame()->GetLevelManager()->GetPlayerManager()->ThisPtr());
-        Logger::Log("FEZUG", "state: %s", ActionTypeToString(GetPlayerManager()->GetAction(), true).c_str());
+        Logger::Log("FEZUG", "CameraManager pointer: %08X", GetGame()->GetCameraManager()->ThisPtr());
 
         //I "tried" to get a symbol for one of the functions but failed miserably
         /*HMODULE hFEZ = GetModuleHandle("FEZ.exe");
@@ -33,6 +34,7 @@ namespace FEZEngine {
         FEZOBJ_STATIC_SET(LevelManager, GetGame()->GetLevelManager());
         FEZOBJ_STATIC_SET(PlayerManager, GetLevelManager()->GetPlayerManager());
         FEZOBJ_STATIC_SET(InputManager, GetGame()->GetInputManager());
+        FEZOBJ_STATIC_SET(CameraManager, GetGame()->GetCameraManager());
     }
 
     void Update() {
@@ -42,6 +44,11 @@ namespace FEZEngine {
             GetInputManager()->SetEnabledState(gInput->IsGameInputEnabled());
         }
     }
+
+    uintptr_t GetFuncAddr(int offset) {
+        static auto baseAddress = Memory::GetModuleBaseAddress("FEZ.exe");
+        return (uintptr_t)((char*)baseAddress + offset);
+    }
 }
 
 CREATE_COMMAND_PARAMS(setpos, "Sets Gomez's position", 3) {
@@ -49,4 +56,8 @@ CREATE_COMMAND_PARAMS(setpos, "Sets Gomez's position", 3) {
     float y = std::stof(params[1]);
     float z = std::stof(params[2]);
     FEZEngine::GetPlayerManager()->SetPosition(Vector3(x, y, z));
+}
+
+CREATE_COMMAND_SIMPLE(restart_level, "Restarts current level") {
+    FEZEngine::GetLevelManager()->Reset();
 }

@@ -188,6 +188,7 @@
     <ClInclude Include="Features\Noclip.hpp" />
     <ClInclude Include="FEZUG.hpp" />
     <ClInclude Include="Modules\FEZEngine\ActionType.hpp" />
+    <ClInclude Include="Modules\FEZEngine\CameraManager.hpp" />
     <ClInclude Include="Modules\FEZEngine\Game.hpp" />
     <ClInclude Include="Modules\FEZEngine\InputManager.hpp" />
     <ClInclude Include="Modules\FEZEngine\LevelData.hpp" />
