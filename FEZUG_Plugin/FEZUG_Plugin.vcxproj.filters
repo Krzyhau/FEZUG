@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="FEZUG.cpp" />
+    <ClCompile Include="Utils\Common.hpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Memory.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Input.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\FEZEngine.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\Overlay.cpp">
+      <Filter>Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Feature.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Console\Command.cpp">
+      <Filter>Features\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Console\Console.cpp">
+      <Filter>Features\Console</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Logger.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Common.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Modules\FEZEngine\ActionType.cpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Hud.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Features\Noclip.cpp">
+      <Filter>Features</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{9dfcaa98-5aa1-4cbb-bbcb-92334f43c252}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features">
+      <UniqueIdentifier>{7fe3d4c2-7cbe-4741-bdab-19b28ed8b28a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules">
+      <UniqueIdentifier>{c7486a3e-cc37-458e-81e3-8a65028280dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Features\Console">
+      <UniqueIdentifier>{b6dc416c-e123-4246-a4d2-afc8b486e2b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Modules\FEZEngine">
+      <UniqueIdentifier>{fff6ad5e-e278-4df1-b49f-c669a66374e6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils\Memory.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Input.hpp">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine.hpp">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\Overlay.hpp">
+      <Filter>Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Feature.hpp">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Console\Command.hpp">
+      <Filter>Features\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Console\Console.hpp">
+      <Filter>Features\Console</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Math.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Logger.hpp">
+      <Filter>Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FEZUG.hpp" />
+    <ClInclude Include="Modules\FEZEngine\Object.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\Game.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\LevelManager.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\LevelData.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\PlayerManager.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\ActionType.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\TrileInstance.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Hud.hpp">
+      <Filter>Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Modules\FEZEngine\InputManager.hpp">
+      <Filter>Modules\FEZEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Features\Noclip.hpp">
+      <Filter>Features</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

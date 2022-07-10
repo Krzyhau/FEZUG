@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32407.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FEZUG_Launcher", "FEZUG_Launcher\FEZUG_Launcher.vcxproj", "{4A4B1D9C-5031-4E03-B25F-5D7F269D0AB8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FEZUG_Plugin", "FEZUG_Plugin\FEZUG_Plugin.vcxproj", "{32696108-9DB8-47B7-8CC9-5F37700B15ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A4B1D9C-5031-4E03-B25F-5D7F269D0AB8}.Debug|x86.ActiveCfg = Debug|Win32
+		{4A4B1D9C-5031-4E03-B25F-5D7F269D0AB8}.Debug|x86.Build.0 = Debug|Win32
+		{4A4B1D9C-5031-4E03-B25F-5D7F269D0AB8}.Release|x86.ActiveCfg = Release|Win32
+		{4A4B1D9C-5031-4E03-B25F-5D7F269D0AB8}.Release|x86.Build.0 = Release|Win32
+		{32696108-9DB8-47B7-8CC9-5F37700B15ED}.Debug|x86.ActiveCfg = Debug|Win32
+		{32696108-9DB8-47B7-8CC9-5F37700B15ED}.Debug|x86.Build.0 = Debug|Win32
+		{32696108-9DB8-47B7-8CC9-5F37700B15ED}.Release|x86.ActiveCfg = Release|Win32
+		{32696108-9DB8-47B7-8CC9-5F37700B15ED}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB06240F-90C2-44C9-8E60-E61C429C77D0}
+	EndGlobalSection
+EndGlobal
